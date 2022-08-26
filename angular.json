@@ -3,6 +3,10 @@
   "version": 2,
   "projects": {
     "mfe-shopping-app": "apps/mfe-shopping-app",
-    "mfe-shopping-app-e2e": "apps/mfe-shopping-app-e2e"
+    "mfe-shopping-app-e2e": "apps/mfe-shopping-app-e2e",
+    "shopping-cart": "apps/shopping-cart",
+    "shopping-cart-e2e": "apps/shopping-cart-e2e",
+    "shopping-store": "apps/shopping-store",
+    "shopping-store-e2e": "apps/shopping-store-e2e"
   }
 }
