@@ -1,0 +1,8 @@
+{
+  "$schema": "./node_modules/nx/schemas/workspace-schema.json",
+  "version": 2,
+  "projects": {
+    "mfe-shopping-app": "apps/mfe-shopping-app",
+    "mfe-shopping-app-e2e": "apps/mfe-shopping-app-e2e"
+  }
+}
