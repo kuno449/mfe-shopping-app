@@ -18,12 +18,18 @@
     },
     "lint": {
       "executor": "@nrwl/linter:eslint",
-      "outputs": ["{options.outputFile}"],
+      "outputs": [
+        "{options.outputFile}"
+      ],
       "options": {
-        "lintFilePatterns": ["apps/shopping-cart-e2e/**/*.{js,ts}"]
+        "lintFilePatterns": [
+          "apps/shopping-cart-e2e/**/*.{js,ts}"
+        ]
       }
     }
   },
   "tags": [],
-  "implicitDependencies": ["shopping-cart"]
+  "implicitDependencies": [
+    "shopping-cart"
+  ]
 }
