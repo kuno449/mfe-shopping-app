@@ -5,7 +5,7 @@ import {RouterModule, Routes} from "@angular/router";
 
 const routes: Routes = [
   { path: 'store', loadChildren: () => import('store/Module').then(m => m.AppModule) },
-  { path: 'cart', loadChildren: () => import('store/Module').then(m => m.AppModule) },
+  { path: 'cart', loadChildren: () => import('cart/Module').then(m => m.AppModule) },
 ];
 
 @NgModule({

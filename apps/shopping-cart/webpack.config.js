@@ -30,7 +30,7 @@ module.exports = {
         name: "cart",
         filename: "remoteEntry.js",
         exposes: {
-            './Component': './apps/shopping-cart/src/app/app.component.ts',
+            './Module': './apps/shopping-cart/src/app/app.module.ts',
         },
         shared: share({
           "@angular/core": { singleton: true, strictVersion: true, requiredVersion: 'auto' },
