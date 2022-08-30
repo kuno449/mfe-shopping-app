@@ -28,8 +28,8 @@ module.exports = {
     new ModuleFederationPlugin({
         library: { type: "module" },
         remotes: {
-            "cart": "cart@http://localhost:4202/remoteEntry.js",
-            "store": "store@http://localhost:4201/remoteEntry.js",
+            "cart": "http://localhost:4202/remoteEntry.js",
+            "store": "http://localhost:4201/remoteEntry.js",
         },
         shared: share({
           "@angular/core": { singleton: true, strictVersion: true, requiredVersion: 'auto' },
