@@ -8,13 +8,18 @@ import {AuthService} from "@auth0/auth0-angular";
 })
 export class AppComponent {
 
-  title = 'mfe-shopping-app';
+  protected accessToken = '';
 
   constructor(public auth: AuthService) {
   }
 
   public login(): void {
-    this.auth.loginWithPopup();
+    this.auth.loginWithPopup().subscribe(() => {
+      this.auth.getAccessTokenSilently().subscribe(accessToken => {
+        console.log('AccessToken::' + accessToken);
+        this.accessToken = accessToken;
+      });
+    });
   }
 
   public logout(): void {

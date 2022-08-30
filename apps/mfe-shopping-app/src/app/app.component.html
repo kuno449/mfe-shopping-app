@@ -1,8 +1,8 @@
-<h1>mfe-shopping-app</h1>
+<h1>Willkommen in Shopping App</h1>
 <nav>
   <div class="menu-container">
     <div *ngIf="auth.user$ | async as user">
-      <div>Name:: <span>{{ user.name }}</span></div>
+      <div>Name:: {{ user.name }}</div>
     </div>
 
     <ng-container *ngIf="auth.isAuthenticated$ | async; else loggedOut">
