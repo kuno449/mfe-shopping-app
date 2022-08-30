@@ -1,7 +1,22 @@
 <h1>mfe-shopping-app</h1>
 <nav>
-  <router-outlet>
-    <a routerLink="store">to Store</a> //
-    <a routerLink="cart">to Cart</a>
-  </router-outlet>
+  <div class="menu-container">
+    <div *ngIf="auth.user$ | async as user">
+      <div>Name:: <span>{{ user.name }}</span></div>
+    </div>
+
+    <ng-container *ngIf="auth.isAuthenticated$ | async; else loggedOut">
+      <button (click)="logout()">Log out</button>
+    </ng-container>
+
+    <ng-template #loggedOut>
+      <button (click)="login()">Log in</button>
+    </ng-template>
+
+    <router-outlet>
+      <a routerLink="store">to Store</a> //
+      <a routerLink="cart">to Cart</a>
+    </router-outlet>
+  </div>
+
 </nav>
