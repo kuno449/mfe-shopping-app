@@ -1,2 +1,13 @@
-<h1>Shopping-Store Remote!!!!</h1>
+<div class="product-container">
+  <div class="product-card" *ngFor="let product of products; index as i">
+    <div><img src="https://picsum.photos/150?random={{i}}" alt="random pics" /></div>
+    <div class="name">{{ product.name }}</div>
+    <div class="maker">{{ product.maker }}</div>
+    <div class="price">{{ product.price }}</div>
+    <div class="add-cart">
+      <button class="add-cart-btn" (click)="addCart(product)">Add Cart</button>
+    </div>
+  </div>
+</div>
+
 <router-outlet></router-outlet>

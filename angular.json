@@ -4,6 +4,7 @@
   "projects": {
     "mfe-shopping-app": "apps/mfe-shopping-app",
     "mfe-shopping-app-e2e": "apps/mfe-shopping-app-e2e",
+    "product": "libs/product",
     "shopping-cart": "apps/shopping-cart",
     "shopping-cart-e2e": "apps/shopping-cart-e2e",
     "shopping-store": "apps/shopping-store",

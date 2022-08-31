@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import ProductGenerator from "../../../../libs/product/src/lib/utils/product-generator";
+import {Product} from "../../../../libs/product/src/lib/model/product";
 
 @Component({
   selector: 'my-microfrontend-root',
@@ -6,5 +8,14 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss'],
 })
 export class AppComponent {
-  title = 'shopping-store';
+
+  public products: Product[] = [];
+
+  constructor() {
+    this.products = ProductGenerator.generateRandomProducts(30);
+  }
+
+  public addCart(product: Product) {
+
+  }
 }

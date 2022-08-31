@@ -1,0 +1,10 @@
+{
+  "main-app" : {
+    "greedings": "Willkommen in unserem Shop!!",
+    "username": "Benutzername",
+    "logout": "Abmeldung",
+    "login": "Anmeldung",
+    "to-shopping": "zum Einkaufen",
+    "to-cart": "zum Warenkorb"
+  }
+}

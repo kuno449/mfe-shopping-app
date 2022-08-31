@@ -1,22 +1,23 @@
-<h1>Willkommen in Shopping App</h1>
-<nav>
-  <div class="menu-container">
-    <div *ngIf="auth.user$ | async as user">
-      <div>Name:: {{ user.name }}</div>
+<div  *transloco="let t; read: 'main-app'">
+  <h1>{{ t('greedings') }}</h1>
+  <nav>
+    <div class="menu-container">
+      <div *ngIf="auth.user$ | async as user">
+        <div>{{ t('username') }}:: {{ user.name }}</div>
+      </div>
+
+      <ng-container *ngIf="auth.isAuthenticated$ | async; else loggedOut">
+        <button (click)="logout()">{{ t('logout') }}</button>
+      </ng-container>
+
+      <ng-template #loggedOut>
+        <button (click)="login()">{{ t('login') }}</button>
+      </ng-template>
+
+      <router-outlet>
+        <a routerLink="store">{{ t('to-shopping') }}</a> //
+        <a routerLink="cart">{{ t('to-cart') }}</a>
+      </router-outlet>
     </div>
-
-    <ng-container *ngIf="auth.isAuthenticated$ | async; else loggedOut">
-      <button (click)="logout()">Log out</button>
-    </ng-container>
-
-    <ng-template #loggedOut>
-      <button (click)="login()">Log in</button>
-    </ng-template>
-
-    <router-outlet>
-      <a routerLink="store">to Store</a> //
-      <a routerLink="cart">to Cart</a>
-    </router-outlet>
-  </div>
-
-</nav>
+  </nav>
+</div>
