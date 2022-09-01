@@ -3,6 +3,8 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
 import { RouterModule } from '@angular/router';
+import {StoreModule} from "@ngrx/store";
+import {cartReducer} from "@my-microfrontend/data-store";
 
 @NgModule({
   declarations: [AppComponent],
@@ -12,6 +14,7 @@ import { RouterModule } from '@angular/router';
       { path: '', component: AppComponent },
       { path: 'cart', component: AppComponent }
     ]),
+    StoreModule.forFeature('cart', cartReducer),
   ],
   providers: [],
   bootstrap: [AppComponent],

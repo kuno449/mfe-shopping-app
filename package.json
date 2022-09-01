@@ -27,6 +27,7 @@
     "@auth0/auth0-angular": "^1.10.1",
     "@ngneat/transloco": "^4.1.1",
     "@ngrx/store": "^14.3.0",
+    "@ngrx/store-devtools": "^14.3.0",
     "@nrwl/angular": "14.5.10",
     "rxjs": "~7.5.0",
     "tslib": "^2.3.0",

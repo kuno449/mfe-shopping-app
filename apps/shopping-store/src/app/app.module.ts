@@ -2,8 +2,8 @@ import {NgModule} from '@angular/core';
 import {BrowserModule} from '@angular/platform-browser';
 import {AppComponent} from './app.component';
 import {RouterModule} from '@angular/router';
-import {StoreModule} from "@ngrx/store";
 import {cartReducer} from "@my-microfrontend/data-store";
+import {StoreModule} from "@ngrx/store";
 
 @NgModule({
   declarations: [AppComponent],
@@ -13,7 +13,7 @@ import {cartReducer} from "@my-microfrontend/data-store";
       { path: '', component: AppComponent },
       { path: 'store', component: AppComponent }
     ]),
-    StoreModule.forRoot({ cart: cartReducer }, {})
+    StoreModule.forFeature('cart', cartReducer),
   ],
   providers: [],
   bootstrap: [AppComponent],

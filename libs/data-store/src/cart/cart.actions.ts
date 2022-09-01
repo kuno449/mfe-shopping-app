@@ -1,12 +1,10 @@
 import { createAction, props } from '@ngrx/store';
-import {Product} from "../../../product/src/lib/model/product";
+import {Product} from "@my-microfrontend/product";
 
 export const addItem = createAction(
-  'Add item',
-  props<Product>()
+  'Add item', props<Product>()
 );
 
 export const removeItem = createAction(
-  'Remove item',
-  props<Product>()
+  'Remove item', props<Product>()
 );

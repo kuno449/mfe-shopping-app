@@ -1,6 +1,6 @@
 import {Component} from '@angular/core';
 import {Product, ProductGenerator} from "@my-microfrontend/product";
-import {StoreActionService} from "@my-microfrontend/data-store";
+import {CartStoreService} from "@my-microfrontend/data-store";
 
 @Component({
   selector: 'my-microfrontend-root',
@@ -11,11 +11,11 @@ export class AppComponent {
 
   public products: Product[] = [];
 
-  constructor(private _storeAction: StoreActionService) {
+  constructor(private _cartStore: CartStoreService) {
     this.products = ProductGenerator.getPredefinedProducts();
   }
 
   public addCart(product: Product) {
-    this._storeAction.addItem(product);
+    this._cartStore.addItem(product);
   }
 }

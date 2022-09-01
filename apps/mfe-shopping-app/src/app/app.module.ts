@@ -6,6 +6,8 @@ import { AuthModule } from '@auth0/auth0-angular';
 import {loadRemoteModule} from "@angular-architects/module-federation";
 import { HttpClientModule } from '@angular/common/http';
 import { TranslocoRootModule } from './transloco-root.module';
+import {cartReducer, DataStoreModule} from "@my-microfrontend/data-store";
+import {StoreModule} from "@ngrx/store";
 
 const routes: Routes = [
   { path: '', loadChildren: () => import('store/Module').then(m => m.AppModule) },
@@ -28,6 +30,8 @@ const routes: Routes = [
     }),
     HttpClientModule,
     TranslocoRootModule,
+    DataStoreModule,
+    StoreModule.forFeature('cart', cartReducer),
   ],
   providers: [],
   bootstrap: [AppComponent],

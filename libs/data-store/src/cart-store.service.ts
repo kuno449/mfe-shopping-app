@@ -1,14 +1,18 @@
 import {Store} from "@ngrx/store";
 import {Product} from "@my-microfrontend/product";
 import {addItem, removeItem} from "./cart/cart.actions";
+import {Observable} from "rxjs";
 import {Injectable} from "@angular/core";
 
 @Injectable({
-  providedIn: 'root',
+  providedIn: 'root'
 })
-export class StoreActionService {
+export class CartStoreService {
 
-  constructor(private store: Store) {}
+  constructor(private store: Store<{ cart: Product[] }>) {
+  }
+
+  public readonly currentItems$: Observable<Product[]> = this.store.select((state) => state.cart);
 
   public addItem(product: Product) {
     this.store.dispatch(addItem(product));
