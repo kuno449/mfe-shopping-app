@@ -1,5 +1,6 @@
 import {Component} from '@angular/core';
 import {AuthService} from "@auth0/auth0-angular";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'my-microfrontend-root',
@@ -10,7 +11,8 @@ export class AppComponent {
 
   protected accessToken = '';
 
-  constructor(public auth: AuthService) {
+  constructor(private _router: Router,
+              public auth: AuthService) {
   }
 
   public login(): void {
@@ -24,5 +26,9 @@ export class AppComponent {
 
   public logout(): void {
     this.auth.logout();
+  }
+
+  public toShoppingCart() {
+    this._router.navigate(['cart']);
   }
 }

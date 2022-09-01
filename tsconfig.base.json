@@ -15,6 +15,7 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
+      "@my-microfrontend/data-store": ["libs/data-store/src/index.ts"],
       "@my-microfrontend/product": ["libs/product/src/index.ts"]
     }
   },

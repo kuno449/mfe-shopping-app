@@ -1,6 +1,6 @@
-import { Component } from '@angular/core';
-import ProductGenerator from "../../../../libs/product/src/lib/utils/product-generator";
-import {Product} from "../../../../libs/product/src/lib/model/product";
+import {Component} from '@angular/core';
+import {Product, ProductGenerator} from "@my-microfrontend/product";
+import {StoreActionService} from "@my-microfrontend/data-store";
 
 @Component({
   selector: 'my-microfrontend-root',
@@ -11,11 +11,11 @@ export class AppComponent {
 
   public products: Product[] = [];
 
-  constructor() {
-    this.products = ProductGenerator.generateRandomProducts(30);
+  constructor(private _storeAction: StoreActionService) {
+    this.products = ProductGenerator.getPredefinedProducts();
   }
 
   public addCart(product: Product) {
-
+    this._storeAction.addItem(product);
   }
 }

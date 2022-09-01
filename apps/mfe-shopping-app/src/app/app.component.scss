@@ -1,7 +1,22 @@
-.menu-container {
-  width: 140px;
+.header-menu {
   display: flex;
-  flex-wrap: wrap;
-  flex-direction: column;
-  gap: 10px;
+
+  h1 {
+    font-family: sans-serif;
+    margin-right: auto;
+  }
+
+  .menu-container {
+    height: 100%;
+    gap: 10px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+    .menu-btn {
+      padding: 10px;
+    }
+  }
 }
+
+

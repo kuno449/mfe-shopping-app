@@ -1,6 +1,6 @@
 {
   "main-app" : {
-    "greedings": "Welcome to our shop!!",
+    "site-title": "Microfrontend Online-Shop",
     "username": "Username",
     "logout": "Logout",
     "login": "Login",
