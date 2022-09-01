@@ -10,13 +10,14 @@ import {cartReducer, DataStoreModule} from "@my-microfrontend/data-store";
 import {StoreModule} from "@ngrx/store";
 
 const routes: Routes = [
-  { path: '', loadChildren: () => import('store/Module').then(m => m.AppModule) },
+  { path: 'store', loadChildren: () => import('store/Module').then(m => m.AppModule) },
   { path: 'cart', loadChildren: () => loadRemoteModule({
       type: 'module',
       remoteEntry: 'http://localhost:4202/remoteEntry.js',
       exposedModule: './Module',
     }).then((m) => m.AppModule)
-  }
+  },
+  { path: '', loadChildren: () => import('store/Module').then(m => m.AppModule) }
 ];
 
 @NgModule({

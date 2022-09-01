@@ -12,7 +12,10 @@
 
       <ng-template #loggedOut>
         <button class="menu-btn" (click)="login()">{{ t('login') }}</button>
-        <button class="menu-btn" (click)="toShoppingCart()">{{ t('to-cart') }}</button>
+        <ng-container [ngSwitch]="true">
+          <button *ngSwitchCase="['/', '/store'].includes(router.url)" class="menu-btn" (click)="toShoppingCart()">{{ t('to-cart') }}</button>
+          <button *ngSwitchCase="['/cart'].includes(router.url)" class="menu-btn" (click)="toStore()">{{ t('to-shopping') }}</button>
+        </ng-container>
       </ng-template>
 
     </div>

@@ -1,5 +1,17 @@
-<h1>Shopping-Cart Remote!!!!</h1>
-  <div *ngFor="let item of currentItems">
-    <div>{{ item.id }}</div>
+<div class="cart-container">
+  <div class="product-card" *ngFor="let item of currentItems; index as i">
+    <div class="photo"><img src="https://picsum.photos/150?random={{i}}" alt="random pics" /></div>
+    <div class="product-info">
+      <div class="name">{{ item.name }}</div>
+      <div class="maker">{{ item.maker }}</div>
+      <div class="price">{{ item.price }}</div>
+    </div>
+    <div class="item-amount">
+      <div class="item-plus"><button>Up</button></div>
+      <div class="amount">1</div>
+      <div class="item-minus"><button>Down</button></div>
+    </div>
   </div>
+</div>
+
 <router-outlet></router-outlet>

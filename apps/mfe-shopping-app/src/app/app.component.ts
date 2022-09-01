@@ -11,7 +11,7 @@ export class AppComponent {
 
   protected accessToken = '';
 
-  constructor(private _router: Router,
+  constructor(public router: Router,
               public auth: AuthService) {
   }
 
@@ -29,6 +29,10 @@ export class AppComponent {
   }
 
   public toShoppingCart() {
-    this._router.navigate(['cart']);
+    this.router.navigate(['cart']);
+  }
+
+  public toStore() {
+    this.router.navigate(['store']);
   }
 }
