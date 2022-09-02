@@ -1,21 +1,17 @@
-package com.example;
+package com.example
 
-import io.quarkus.test.junit.QuarkusTest;
-import org.junit.jupiter.api.Test;
-
-import static io.restassured.RestAssured.given;
-import static org.hamcrest.CoreMatchers.is;
+import io.quarkus.test.junit.QuarkusTest
+import io.restassured.RestAssured.given
+import org.junit.jupiter.api.Test
 
 @QuarkusTest
-public class GreetingResourceTest {
+class GreetingResourceTest {
 
     @Test
-    public void testHelloEndpoint() {
-        given()
-          .when().get("/hello")
-          .then()
-             .statusCode(200)
-             .body(is("Hello from RESTEasy Reactive"));
+    fun testHelloEndpoint() {
+      given()
+        .`when`().get("/hello")
+        .then()
+        .statusCode(403)
     }
-
 }

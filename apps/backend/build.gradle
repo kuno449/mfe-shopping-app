@@ -1,7 +1,9 @@
 plugins {
 	id 'java'
-    id 'io.quarkus'
-	id 'maven-publish'
+  id 'io.quarkus'
+  id "org.jetbrains.kotlin.jvm" version "1.7.10"
+  id "org.jetbrains.kotlin.plugin.allopen" version "1.7.10"
+  id 'maven-publish'
 }
 
 repositories {
@@ -10,9 +12,11 @@ repositories {
 }
 
 dependencies {
+    implementation 'org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.7.10'
     implementation enforcedPlatform("${quarkusPlatformGroupId}:${quarkusPlatformArtifactId}:${quarkusPlatformVersion}")
     implementation 'io.quarkus:quarkus-arc'
     implementation 'io.quarkus:quarkus-resteasy-reactive'
+    implementation 'io.quarkus:quarkus-oidc'
     testImplementation 'io.quarkus:quarkus-junit5'
     testImplementation 'io.rest-assured:rest-assured'
 }
@@ -25,13 +29,19 @@ java {
     targetCompatibility = JavaVersion.VERSION_11
 }
 
-compileJava {
-    options.encoding = 'UTF-8'
-    options.compilerArgs << '-parameters'
+allOpen {
+  annotation("javax.ws.rs.Path")
+  annotation("javax.enterprise.context.ApplicationScoped")
+  annotation("io.quarkus.test.junit.QuarkusTest")
 }
 
-compileTestJava {
-    options.encoding = 'UTF-8'
+compileKotlin {
+    kotlinOptions.jvmTarget = JavaVersion.VERSION_11
+    kotlinOptions.javaParameters = true
+}
+
+compileTestKotlin {
+    kotlinOptions.jvmTarget = JavaVersion.VERSION_11
 }
 
 publishing {
