@@ -1,7 +1,7 @@
 import {Component, OnDestroy} from '@angular/core';
 import {Subscription} from "rxjs";
+import {CartStoreService, Item} from "@my-microfrontend/data-store";
 import {Product} from "@my-microfrontend/product";
-import {CartStoreService} from "@my-microfrontend/data-store";
 
 @Component({
   selector: 'my-microfrontend-root',
@@ -10,7 +10,8 @@ import {CartStoreService} from "@my-microfrontend/data-store";
 })
 export class AppComponent implements OnDestroy {
 
-  public currentItems: Product[] = [];
+  public currentItems: Item[] = [];
+  public numbers: number[] = [1,2,3,4,5,6,7,8,9,10];
 
   private _cartSubscription: Subscription;
 
@@ -22,5 +23,14 @@ export class AppComponent implements OnDestroy {
 
   ngOnDestroy() {
     this._cartSubscription.unsubscribe();
+  }
+
+  public onChangeAmount(prod: Product, event: any): void {
+    const amount = event.target.value;
+    this._cartStore.changeAmount(prod, Number(amount));
+  }
+
+  public removeItem(prod: Product) {
+    this._cartStore.removeItem(prod);
   }
 }

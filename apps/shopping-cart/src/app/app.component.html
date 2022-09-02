@@ -2,14 +2,17 @@
   <div class="product-card" *ngFor="let item of currentItems; index as i">
     <div class="photo"><img src="https://picsum.photos/150?random={{i}}" alt="random pics" /></div>
     <div class="product-info">
-      <div class="name">{{ item.name }}</div>
-      <div class="maker">{{ item.maker }}</div>
-      <div class="price">{{ item.price }}</div>
+      <div class="name">{{ item.prod.name }}</div>
+      <div class="maker">{{ item.prod.maker }}</div>
+      <div class="price">{{ item.prod.price }}</div>
     </div>
     <div class="item-amount">
-      <div class="item-plus"><button>Up</button></div>
-      <div class="amount">1</div>
-      <div class="item-minus"><button>Down</button></div>
+      <div class="amount">Menge: {{ item.amount }}</div>
+      <select class="amount-select" (change)="onChangeAmount(item.prod, $event)"
+              name="demo" id="#">
+        <option *ngFor="let num of numbers" value="{{ num }}" [selected]="num === item.amount">{{ num }}</option>
+      </select>
+      <div class="remove-item"><button (click)="removeItem(item.prod)">Entfernen</button></div>
     </div>
   </div>
 </div>

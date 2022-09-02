@@ -8,3 +8,7 @@ export const addItem = createAction(
 export const removeItem = createAction(
   'Remove item', props<Product>()
 );
+
+export const changeAmount = createAction(
+  'Change amount', props<{product: Product, amount: number}>()
+);

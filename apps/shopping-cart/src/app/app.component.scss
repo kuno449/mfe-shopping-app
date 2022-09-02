@@ -36,16 +36,14 @@
       align-self: flex-end;
       display: flex;
       align-items: center;
+      column-gap: 10px;
 
-      .item-plus {
-
+      .remove-item {
+        margin-right: 10px;
       }
 
-      .amount {
-      }
-
-      .item-minus {
-
+      .amount-select {
+        padding: 2px 5px;
       }
     }
   }
