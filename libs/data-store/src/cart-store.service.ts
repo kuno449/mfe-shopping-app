@@ -4,6 +4,7 @@ import {addItem, changeAmount, removeItem} from "./cart/cart.actions";
 import {Observable} from "rxjs";
 import {Injectable} from "@angular/core";
 import {Item} from "./cart/cart.reducer";
+import {totalPriceSelector} from "./cart/cart.selector";
 
 @Injectable({
   providedIn: 'root'
@@ -14,6 +15,7 @@ export class CartStoreService {
   }
 
   public readonly currentItems$: Observable<Item[]> = this.store.select((state) => state.cart);
+  public readonly totalPrice$: Observable<number> = this.store.select(totalPriceSelector);
 
   public addItem(product: Product) {
     this.store.dispatch(addItem(product));

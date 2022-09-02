@@ -1,11 +1,11 @@
 .cart-container {
+  font-family: sans-serif;
 
   .product-card {
     display: flex;
     border: solid 1px lightgray;
     padding: 10px;
     column-gap: 10px;
-    font-family: sans-serif;
 
     .product-info {
       margin-right: auto;
@@ -46,6 +46,13 @@
         padding: 2px 5px;
       }
     }
+  }
+
+  .total-price {
+    float: right;
+    font-size: 24px;
+    font-weight: 700;
+    margin: 30px;
   }
 }
 

@@ -11,18 +11,25 @@ import {Product} from "@my-microfrontend/product";
 export class AppComponent implements OnDestroy {
 
   public currentItems: Item[] = [];
+  public totalPrice: number = 0;
   public numbers: number[] = [1,2,3,4,5,6,7,8,9,10];
 
   private _cartSubscription: Subscription;
+  private _totalPriceSubscription: Subscription;
 
   constructor(private _cartStore: CartStoreService) {
     this._cartSubscription = this._cartStore.currentItems$.subscribe(items => {
       this.currentItems = items;
     });
+
+    this._totalPriceSubscription = this._cartStore.totalPrice$.subscribe(total => {
+      this.totalPrice = total;
+    });
   }
 
   ngOnDestroy() {
     this._cartSubscription.unsubscribe();
+    this._totalPriceSubscription.unsubscribe();
   }
 
   public onChangeAmount(prod: Product, event: any): void {
