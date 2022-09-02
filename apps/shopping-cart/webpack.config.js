@@ -39,6 +39,7 @@ module.exports = {
           "@angular/router": { singleton: true, strictVersion: true, requiredVersion: 'auto' },
           "@ngrx/store": { singleton: true, requiredVersion: 'auto' },
           "@ngrx/store-devtools": { singleton: true, requiredVersion: 'auto' },
+          "@auth0/auth0-angular": { singleton: true, strictVersion: true, requiredVersion: 'auto' },
           ...sharedMappings.getDescriptors()
         })
 

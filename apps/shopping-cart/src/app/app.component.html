@@ -16,9 +16,16 @@
     </div>
   </div>
 
-  <div class="total-price">
-    Gesamtpreis: {{ totalPrice | currency: 'EUR' }}
+  <div class="price-payment">
+    <div class="total-price">
+      Gesamtpreis: {{ totalPrice | currency: 'EUR' }}
+    </div>
+
+    <div *ngIf="auth.isAuthenticated$ | async" class="to-payment">
+      <button class="to-payment-btn">Bezahlen</button>
+    </div>
   </div>
+
 </div>
 
 <router-outlet></router-outlet>

@@ -48,11 +48,25 @@
     }
   }
 
-  .total-price {
+  .price-payment {
     float: right;
-    font-size: 24px;
-    font-weight: 700;
+    display: flex;
     margin: 30px;
+    align-items: center;
+    gap: 30px;
+
+    .total-price {
+      font-size: 24px;
+      font-weight: 700;
+    }
+
+    .to-payment {
+
+      .to-payment-btn {
+        cursor: pointer;
+        font-size: 20px;
+      }
+    }
   }
 }
 

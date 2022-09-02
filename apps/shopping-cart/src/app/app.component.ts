@@ -2,6 +2,7 @@ import {Component, OnDestroy} from '@angular/core';
 import {Subscription} from "rxjs";
 import {CartStoreService, Item} from "@my-microfrontend/data-store";
 import {Product} from "@my-microfrontend/product";
+import {AuthService} from "@auth0/auth0-angular";
 
 @Component({
   selector: 'my-microfrontend-root',
@@ -17,7 +18,7 @@ export class AppComponent implements OnDestroy {
   private _cartSubscription: Subscription;
   private _totalPriceSubscription: Subscription;
 
-  constructor(private _cartStore: CartStoreService) {
+  constructor(private _cartStore: CartStoreService, public auth: AuthService) {
     this._cartSubscription = this._cartStore.currentItems$.subscribe(items => {
       this.currentItems = items;
     });
