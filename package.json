@@ -49,6 +49,7 @@
     "@nrwl/jest": "14.5.10",
     "@nrwl/linter": "14.5.10",
     "@nrwl/workspace": "14.5.10",
+    "@nxrocks/nx-quarkus": "^3.0.2",
     "@types/jest": "27.4.1",
     "@types/node": "16.11.7",
     "@types/uuid": "^8.3.4",

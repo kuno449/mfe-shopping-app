@@ -1,0 +1,77 @@
+{
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "apps/backend/src",
+  "projectType": "application",
+  "targets": {
+    "dev": {
+      "executor": "@nxrocks/nx-quarkus:dev",
+      "options": {
+        "root": "apps/backend"
+      }
+    },
+    "serve": {
+      "executor": "@nxrocks/nx-quarkus:serve",
+      "options": {
+        "root": "apps/backend"
+      }
+    },
+    "remote-dev": {
+      "executor": "@nxrocks/nx-quarkus:remote-dev",
+      "options": {
+        "root": "apps/backend"
+      }
+    },
+    "test": {
+      "executor": "@nxrocks/nx-quarkus:test",
+      "options": {
+        "root": "apps/backend"
+      }
+    },
+    "clean": {
+      "executor": "@nxrocks/nx-quarkus:clean",
+      "options": {
+        "root": "apps/backend"
+      }
+    },
+    "build": {
+      "executor": "@nxrocks/nx-quarkus:build",
+      "options": {
+        "root": "apps/backend"
+      },
+      "dependsOn": [
+        "^install"
+      ],
+      "outputs": [
+        "apps/backend/build"
+      ]
+    },
+    "install": {
+      "executor": "@nxrocks/nx-quarkus:install",
+      "options": {
+        "root": "apps/backend"
+      },
+      "outputs": [
+        "apps/backend/build"
+      ]
+    },
+    "package": {
+      "executor": "@nxrocks/nx-quarkus:package",
+      "options": {
+        "root": "apps/backend"
+      }
+    },
+    "add-extension": {
+      "executor": "@nxrocks/nx-quarkus:add-extension",
+      "options": {
+        "root": "apps/backend"
+      }
+    },
+    "list-extensions": {
+      "executor": "@nxrocks/nx-quarkus:list-extensions",
+      "options": {
+        "root": "apps/backend"
+      }
+    }
+  },
+  "tags": []
+}

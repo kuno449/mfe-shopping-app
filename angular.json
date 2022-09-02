@@ -6,6 +6,7 @@
     "mfe-shopping-app": "apps/mfe-shopping-app",
     "product": "libs/product",
     "shopping-cart": "apps/shopping-cart",
-    "shopping-store": "apps/shopping-store"
+    "shopping-store": "apps/shopping-store",
+    "backend": "apps/backend"
   }
 }

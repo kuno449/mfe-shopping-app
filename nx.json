@@ -49,5 +49,8 @@
       "style": "scss"
     }
   },
-  "defaultProject": "mfe-shopping-app"
+  "defaultProject": "mfe-shopping-app",
+  "plugins": [
+    "@nxrocks/nx-quarkus"
+  ]
 }
