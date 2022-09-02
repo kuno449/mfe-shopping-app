@@ -7,7 +7,7 @@
       <div class="price">{{ item.prod.price }}</div>
     </div>
     <div class="item-amount">
-      <div class="amount">Menge: {{ item.amount }}</div>
+      <div class="amount">Menge:</div>
       <select class="amount-select" (change)="onChangeAmount(item.prod, $event)"
               name="demo" id="#">
         <option *ngFor="let num of numbers" value="{{ num }}" [selected]="num === item.amount">{{ num }}</option>
